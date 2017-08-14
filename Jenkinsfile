@@ -12,9 +12,11 @@ pipeline {
             }
         }
         stage('Test') {
-            dir('test/TheRevbelsMusicWebTests') {
-                sh 'dotnet restore'
-                sh 'dotnet test'
+            steps {
+                dir('test/TheRevbelsMusicWebTests') {
+                    sh 'dotnet restore'
+                    sh 'dotnet test'
+                }
             }
         }
     }
