@@ -5,11 +5,16 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'echo "Building TheRebelsMusic.Com"'
                 dir ('src/TheRebelsMusicWeb') {
                     sh 'dotnet restore'
                     sh 'dotnet build'
                 }
+            }
+        }
+        stage('Test') {
+            dir('test/TheRevbelsMusicWebTests') {
+                sh 'dotnet restore'
+                sh 'dotnet test'
             }
         }
     }
