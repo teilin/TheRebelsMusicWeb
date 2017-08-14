@@ -15,7 +15,7 @@ pipeline {
             steps {
                 dir('test/TheRevbelsMusicWebTests') {
                     sh 'dotnet restore'
-                    sh 'dotnet test'
+                    sh 'dotnet test -r bin'
                 }
             }
         }
