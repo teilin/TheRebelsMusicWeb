@@ -2,6 +2,8 @@ using System;
 using TheRebelsMusicWeb.Models;
 using Dapper;
 using MySql.Data.MySqlClient;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace TheRebelsMusicWeb.Repositories
 {
@@ -10,11 +12,11 @@ namespace TheRebelsMusicWeb.Repositories
         public ConcertRepository()
         {}
 
-        public async void GetAll()
+        public async Task<IEnumerable<Concert>> GetAll()
         {
             using(var connection = new MySqlConnection(""))
             {
-                var test = await connection.QueryAsync<Concert>("", new { Test = 0 });
+                return await connection.QueryAsync<Concert>("", new { Test = 0 });
             }
         }
     }
