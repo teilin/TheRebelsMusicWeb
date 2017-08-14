@@ -4,12 +4,11 @@ pipeline {
     agent any
     stages {
         stage('Build') {
-            node {
-                checkout scm
-                stash 'everything'
-                dir('src/TheRebelsMusicWeb') {
-                bat 'dotnet restore'
-                bat "dotnet build --version-suffix ${env.BUILD_NUMBER}"
+            steps {
+                sh 'echo "Building TheRebelsMusic.Com"'
+                dir ('src/TheRebelsMusicWeb') {
+                    sh 'dotnet restore'
+                    sh 'dotnet build'
                 }
             }
         }
