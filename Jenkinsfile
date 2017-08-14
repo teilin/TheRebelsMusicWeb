@@ -1,13 +1,15 @@
+#!/usr/bin/env groovy
+
 pipeline {
     agent any
     stages {
         stage('Build') {
-            steps {
-                sh 'echo "Building TheRebelsMusic.Com"'
-                dir ('src') {
-                    dir ('TheRebelsMusicWeb') {
-                        sh 'dotnet build'
-                    }
+            node {
+                checkout scm
+                stash 'everything'
+                dir('src/TheRebelsMusicWeb') {
+                bat 'dotnet restore'
+                bat "dotnet build --version-suffix ${env.BUILD_NUMBER}"
                 }
             }
         }
