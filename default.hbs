@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{@site.lang}}">
+<html lang="en">
    <head>
       <!-- Metas -->
       <meta charset="utf-8">
@@ -7,12 +7,13 @@
       <meta name="description" content="{{@site.description}}">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!-- Css -->
-      <link href="{{asset 'css/bootstrap.css'}}" rel="stylesheet" type="text/css" media="all"/>
-      <link href="{{asset 'css/base.css'}}" rel="stylesheet" type="text/css" media="all"/>
-      <link href="{{asset 'css/main.css'}}" rel="stylesheet" type="text/css" media="all"/>
-      <link href="{{asset 'css/flexslider.css'}}" rel="stylesheet" type="text/css"  media="all" />
-      <link href="{{asset 'css/magnific-popup.css'}}" rel="stylesheet" type="text/css"  media="all" />
-      <link href="{{asset 'css/fonts.css'}}" rel="stylesheet" type="text/css"  media="all" />
+      <link href="{{asset "css/bootstrap.css"}}" rel="stylesheet" type="text/css" media="all"/>
+      <link href="{{asset "css/base.css"}}" rel="stylesheet" type="text/css" media="all"/>
+      <link href="{{asset "css/main.css"}}" rel="stylesheet" type="text/css" media="all"/>
+      <link href="{{asset "css/flexslider.css"}}" rel="stylesheet" type="text/css"  media="all" />
+      <link href="{{asset "css/magnific-popup.css"}}" rel="stylesheet" type="text/css"  media="all" />
+      <link href="{{asset "css/fonts.css"}}" rel="stylesheet" type="text/css"  media="all" />
+      <link href="{{asset "css/ghost.css"}}" rel="stylesheet" type="text/css"  media="all" />
       <link href="http://fonts.googleapis.com/css?family=Dosis:100,300,400,600,700" rel="stylesheet" type="text/css">
       <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,300,400,400i,600,700,800" rel="stylesheet">
       {{ghost_head}}
@@ -31,38 +32,6 @@
       <!-- End preloader-->
       <!--Wrapper-->
       <div class="wrapper">
-         <div class="block-search-form">
-            <div class="block-content">
-               <div class="container">
-                  <!--end of row-->
-                  <div class="row justify-content-center">
-                     <div class="col-12 col-md-10 col-lg-8">
-                        <form method="get"  >
-                           <div class="card  bg-red ">
-                              <div class="card-body  row no-gutters align-items-center">
-                                 <div class="col-auto">
-                                    <i class="icon-search"></i>
-                                 </div>
-                                 <!--end of col-->
-                                 <div class="col">
-                                    <input class="form-control form-control-lg form-control-border0" placeholder="Type a keywords..." type="search">
-                                 </div>
-                                 <!--end of col-->
-                                 <div class="col-auto">
-                                    <button type="submit" class="btn  btn-primary uppercase border-3">
-                                    Search now</button>
-                                 </div>
-                                 <!--end of col-->
-                              </div>
-                           </div>
-                        </form>
-                     </div>
-                     <!--end of col-->
-                  </div>
-                  <!--end of row-->
-               </div>
-            </div>
-         </div>
          <!--Hero section-->
          <section class="hero">
             <!--Main slider-->
@@ -70,48 +39,8 @@
                <ul class="slides">
                   <li>
                      <div class="background-img overlay zoom">
-                        <img src="img/1.jpg" alt="">
+                        <img src="{{@site.cover_image}}" alt="Cover image">
                      </div>
-                     <!--Container-->
-                     <div class="container hero-content">
-                        <!--Row-->
-                        <div class="row">
-                           <div class="col-sm-12 text-center">
-                              <!--Inner hero-->
-                              <div class="inner-hero">
-                                 <div class="back-rect"></div>
-                                 <h1 class="large text-white uppercase mb-0">welcome to mousiqua</h1>
-                                 <h5 class="mb-0 text-white uppercase">Music Band and Musician Bootstrap Template</h5>
-                                 <div class="front-rect"></div>
-                              </div>
-                           </div>
-                           <!--End row-->
-                        </div>
-                        <!--End container-->
-                     </div>
-                     <!--End inner hero-->
-                  </li>
-                  <li>
-                     <div class="background-img overlay zoom">
-                        <img src="img/2.jpg" alt="">
-                     </div>
-                     <!--Container-->
-                     <div class="container hero-content">
-                        <!--Row-->
-                        <div class="row">
-                           <div class="col-sm-12 text-center">
-                              <!--Inner hero-->
-                              <div class="inner-hero">
-                                 <h1 class="large text-white uppercase mb-0">limitless</h1>
-                                 <h5 class="mb-0 text-white uppercase">New Album Available Everywhere</h5>
-                                 <a class="video-play-but popup-youtube" href="https://www.youtube.com/watch?v=Gc2en3nHxA4"></a>
-                              </div>
-                           </div>
-                           <!--End row-->
-                        </div>
-                        <!--End container-->
-                     </div>
-                     <!--End inner hero-->
                   </li>
                </ul>
             </div>
@@ -120,7 +49,7 @@
             <header class="header default">
                <div class=" left-part">
                   <a class="logo scroll" href="#wrapper">
-                     <h2 class="mb-0 uppercase">mousiqua.</h2>
+                     <h2 class="mb-0 uppercase">{{@site.title}}</h2>
                   </a>
                </div>
                <div class="right-part">
@@ -132,24 +61,8 @@
                      </div>
                      <ul class="main-menu list-inline">
                         {{#if @site.navigation}}
-                            {{#foreach navigation}}
-                                <li><a class="scroll list-inline-item" href="{{url absolute="true"}}">{{label}}</a></li>
-                            {{/foreach}}
+                           {{navigation}}
                         {{/if}}
-                        <!--<li><a class="scroll list-inline-item" href="#wrapper">Home</a></li>
-                        <li><a class="scroll list-inline-item" href="#about">about</a></li>
-                        <li><a class="scroll list-inline-item" href="#discography">discography</a></li>
-                        <li><a class="scroll list-inline-item" href="#band">Band</a></li>
-                        <li class="dropdown"><a class="scroll list-inline-item" href="#tour">Tours</a></li>
-                        <li><a class="scroll list-inline-item" href="#gallery">Gallery</a></li>
-                        <li><a class="scroll list-inline-item " href="#news">News</a></li>
-                        <li><a class="scroll list-inline-item" href="#contact">Contact</a></li>
-                        <li class="block-helper">
-                           <a href="#album" class="scroll"><span ><i class="icon-cd-2"></i></span></a>
-                        </li>
-                        <li class="block-helper">
-                           <span class="icon search-ico"><i class="icon-search"></i></span>
-                        </li>-->
                      </ul>
                   </nav>
                </div>
@@ -218,7 +131,7 @@
                </div>
                <div class="row justify-content-center">
                   <div class="col-12">
-                     <ul class="block-social list-inline text-center mt-4">
+                     <ul class="block-social list-inline text-center mt-5">
                         <li class="list-inline-item">
                            <a href="https://www.facebook.com/therebelsnorway/"> <i class="socicon-facebook"></i> </a>
                         </li>
@@ -229,7 +142,10 @@
                            <a href="https://www.youtube.com/channel/UCMzPZfh0EPI81el86xttYjA"><i class="socicon-youtube"></i> </a>
                         </li>
                         <li class="list-inline-item">
-                           <a href="#"><i class="socicon-apple"></i> </a>
+                           <a href="https://music.apple.com/no/artist/the-rebels/27259414?l=nb"><i class="socicon-apple"></i> </a>
+                        </li>
+                        <li>
+                           <a href="https://open.spotify.com/artist/2P4NYesmm5iVG8CrZOY1jE?si=p4HSbOPkTlSVPpnYRWqRcw"><i class="socicon-spotify"></i></a>
                         </li>
                      </ul>
                   </div>
@@ -247,18 +163,9 @@
                   </div>
                   <div class="col-md-6 text-md-right">
                      <ul class="list-inline small">
-                        <li class="list-inline-item">
-                           <a href="#">Privacy Policy</a>
-                        </li>
-                        <li class="list-inline-item">
-                           <a href="#">Terms of Use</a>
-                        </li>
-                        <li class="list-inline-item">
-                           <a href="#">About</a>
-                        </li>
-                        <li class="list-inline-item">
-                           <a href="#">Legal</a>
-                        </li>
+                        {{#if @site.secondary_navigation}}
+                           {{navigation type="secondary"}}
+                        {{/if}}
                      </ul>
                   </div>
                </div>
@@ -270,15 +177,17 @@
       </div>
       <!-- End wrapper-->
       <!--Javascript--> 
-      <script src="{{asset js/jquery-1.12.4.min.js'}}"></script>
-      <script src="{{asset js/jquery.flexslider-min.js'}}"></script>
-      <script src="{{asset js/smooth-scroll.js'}}" ></script>
-      <script src="{{asset js/jquery.magnific-popup.min.js'}}" ></script>
-      <script src="{{asset js/audio.min.js'}}" ></script>
-      <script src="{{asset js/twitterFetcher_min.js'}}" ></script>
-      <script src="{{asset js/jquery.countdown.min.js'}}" ></script>
-      <script src="{{asset js/placeholders.min.js'}}"></script>
-      <script src="{{asset js/script.js'}}"></script>
+      <script src="{{asset "js/jquery-1.12.4.min.js"}}"></script>
+      <script src="{{asset "js/jquery.flexslider-min.js"}}"></script>
+      <script src="{{asset "js/smooth-scroll.js"}}" ></script>
+      <script src="{{asset "js/jquery.magnific-popup.min.js"}}" ></script>
+      <script src="{{asset "js/audio.min.js"}}" ></script>
+      <script src="{{asset "js/twitterFetcher_min.js"}}" ></script>
+      <script src="{{asset "js/jquery.countdown.min.js"}}" ></script>
+      <script src="{{asset "js/placeholders.min.js"}}"></script>
+      <script src="{{asset "js/script.js"}}"></script>
+      <script src="{{asset "js/jquery.instagramFeed.min.js"}}"></script>
+      <script src="{{asset "js/instagramFetcher.js"}}"></script>
       {{ghost_foot}}
    </body>
 </html>

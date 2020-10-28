@@ -1,0 +1,38 @@
+{{!< default}}
+
+<section id="news" class="news main bg-secondary">
+    {{#post}}
+        <!--Container-->
+        <div class="container">
+            <div class="cover-img zoom">
+                <img src="{{img_url feature_image}}" alt="">
+            </div>
+            <!--Row-->
+            <div class="row justify-content-center ">
+                <div class="col-12 col-md-10 col-lg-9">
+                    <div class="block-content  gap-one-bottom-md text-center">
+                    <div class="block-title ">
+                        <h1 class="uppercase">{{title}}</h1>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <!--End row-->
+        </div>
+        <!--End container-->
+        <!--Container-->
+        <div class="container">
+            <!--Container-->
+            <div class="container">
+                <!--Row-->
+                <div class="row">
+                    <div class="col-12 col-lg-10 ">
+                        {{content}}
+                    </div>
+                </div>
+                <!--End row-->
+            </div>
+        </div>
+    {{/post}}
+<!--End container-->
+</section>

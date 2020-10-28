@@ -1,0 +1,2 @@
+!function(t){"use strict";t(window).on("load",function(){t.instagramFeed({username:"therebels_band",display_profile:!1,display_biography:!1,display_gallery:!1,callback:function(e){var i=e.edge_owner_to_timeline_media.edges.slice(0,9);t(".popup-image").each(function(e){e=i[e];t(this).attr("href","https://www.instagram.com/p/"+e.node.shortcode+"/"),t(this).find("img").attr("src",e.node.thumbnail_resources[2].src)})},styling:!1})})}(jQuery);
+//# sourceMappingURL=instagramFetcher.js.map

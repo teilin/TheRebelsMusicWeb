@@ -1,0 +1,65 @@
+{{!< default}}
+
+<section id="news" class="news main bg-secondary">
+    <!--Container-->
+    <div class="container">
+        <!--Row-->
+        <div class="row justify-content-center ">
+            <div class="col-12 col-md-10 col-lg-9">
+                <div class="block-content  gap-one-bottom-md text-center">
+                <div class="block-title ">
+                    <h1 class="uppercase">On the blog</h1>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!--End row-->
+    </div>
+    <!--End container-->
+    <!--Container-->
+    <div class="container">
+        <ul class="news-list">
+            {{#get "posts" filter="tag:news" limit="all" }}
+                {{#foreach posts }}
+                    {{#if @even}}
+                    <li class="row align-items-center justify-content-around">
+                        <div class="col-12 col-md-6 order-md-2">
+                        <div class="block-content">
+                            <a href="#"><img alt="" class="img-fluid animated" src="{{img_url feature_image }}"></a>
+                        </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-5  order-md-1 ">
+                        <div class="block-content text-left">
+                            <span class="mb-2 opc-70">{{date published_at format="MMMM DD, YYYY"}}</span>
+                            <h2>{{title}}</h2>
+                            <p class="lead">{{excerpt}}</p>
+                            <a href="{{url}}">Read more ›</a>
+                        </div>
+                        </div>
+                    </li>
+                    {{else}}
+                    <li class="row align-items-center justify-content-around">
+                        <div class="col-12 col-md-6 order-1">
+                        <div class="block-content">
+                            <a href="#"><img alt="" class="img-fluid animated" src="{{img_url feature_image }}"></a>
+                        </div>
+                        </div>
+                        <!--end of col-->
+                        <div class="col-12 col-md-6 col-lg-5  order-2 text-left">
+                        <div class="block-content text-left">
+                            <span class="mb-2 opc-70">{{date published_at format="MMMM DD, YYYY"}}</span>
+                            <h2>{{title}}</h2>
+                            <p class="lead">{{excerpt}}</p>
+                            <a href="{{url}}">Read more ›</a>
+                        </div>
+                        </div>
+                        <!--end of col-->
+                    </li>
+                    {{/if}}
+                {{/foreach}}
+            {{/get}}
+            </li>
+        </ul>
+    </div>
+<!--End container-->
+</section>
