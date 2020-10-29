@@ -5,6 +5,7 @@
 
 .DS_Store
 dist/
+config.json
 
 # User-specific files
 *.suo

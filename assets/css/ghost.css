@@ -65,6 +65,9 @@
     height: 200px;
     padding: 10px;
 }
+.gh-post {
+    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 /*.kg-width-wide {}
 .kg-width-full {}
 .kg-gallery-container {}
